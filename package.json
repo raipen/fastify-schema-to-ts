@@ -1,0 +1,43 @@
+{
+  "name": "fastify-schema-to-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "npm run build && npm run typescript",
+    "build": "rimraf ./dist && tsc",
+    "typescript": "tsd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raipen/fastify-schema-to-ts.git"
+  },
+  "keywords": [
+    "fastify",
+    "typescript",
+    "schema",
+    "json-schema",
+    "json-schema-to-ts"
+  ],
+  "author": "Raipen",
+  "bugs": {
+    "url": "https://github.com/raipen/fastify-schema-to-ts/issues"
+  },
+  "homepage": "https://github.com/raipen/fastify-schema-to-ts#readme",
+  "peerDependencies": {
+    "fastify": "^4.19.0",
+    "json-schema-to-ts": "^2.9.0"
+  },
+  "tsd": {
+    "directory": "types"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.9.0",
+    "fastify-tsconfig": "^2.0.0",
+    "tsd": "^0.29.0",
+    "typescript": "^5.2.2",
+    "rimraf": "^5.0.5"
+  }
+}
