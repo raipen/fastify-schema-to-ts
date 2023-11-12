@@ -1,7 +1,7 @@
 {
   "name": "fastify-schema-to-ts",
   "version": "1.0.0",
-  "description": "",
+  "description": "just use your fastify-schemas directly in typescript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
