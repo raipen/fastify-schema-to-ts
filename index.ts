@@ -8,23 +8,23 @@ export type SchemaToInterface<
     headers?: JSONSchema;
     response?: { [key: string]: JSONSchema };
   },
-  Option extends [{ pattern: unknown; output: unknown }] | false = false
+  deserializeOption extends [{ pattern: unknown; output: unknown }] | false = false
 > = {
   Body: T['body'] extends JSONSchema
-  ? FromSchema<T['body'], { deserialize: Option }>
+  ? FromSchema<T['body']>
   : unknown;
   Querystring: T['querystring'] extends JSONSchema
-  ? FromSchema<T['querystring'], { deserialize: Option }>
+  ? FromSchema<T['querystring']>
   : unknown;
   Params: T['params'] extends JSONSchema
-  ? FromSchema<T['params'], { deserialize: Option }>
+  ? FromSchema<T['params']>
   : unknown;
   Headers: T['headers'] extends JSONSchema
-  ? FromSchema<T['headers'], { deserialize: Option }>
+  ? FromSchema<T['headers']>
   : unknown;
   Reply: {
     [key in keyof T['response']]: T['response'][key] extends JSONSchema
-    ? FromSchema<T['response'][key],{ deserialize: Option }>
+    ? FromSchema<T['response'][key],{ deserialize: deserializeOption }>
     : unknown;
   };
 };
